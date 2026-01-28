@@ -113,7 +113,7 @@ nav{
 }
 
 .price{
-  margin-top: .58rem; /* was 0 */
+  margin-top: .65rem; /* was 0 */
   font-size: .9rem;
   color: var(--mute);
   display: block;
@@ -270,4 +270,5 @@ footer{
   font-size:.8rem;
   color:var(--mute);
 }
+
 #problem.reveal{ margin-top: -35rem; }   /* pull section upward */
