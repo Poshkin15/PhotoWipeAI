@@ -1,0 +1,273 @@
+:root{
+  --purple:#6c47ff;
+  --yellow:#ffd426;
+  --blue:#2cabff;
+  --bg:#111113;
+  --surface:#1a1a1f;
+  --text:#f5f5f7;
+  --mute:#a1a1a6;
+  --font:'Inter',system-ui,sans-serif;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font);
+  line-height:1.6;
+}
+
+/* nav */
+nav{
+  position:absolute;
+  top:0;left:0;right:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.5rem 2rem;
+}
+
+.logo{
+  font-weight:800;
+  font-size:1.4rem;
+}
+
+.logo span{
+  color:var(--purple);
+}
+
+.cta{
+  background:var(--yellow);
+  color:#000;
+  padding:.5rem 1rem;
+  border-radius:4px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.cta:hover{
+  filter:brightness(1.1);
+}
+
+/* hero */
+.hero{
+  min-height: 40vh;   /* was 100vh → now 90vh */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:2rem;
+  position:relative;
+}
+
+
+
+.hero-text h1{
+  font-size:clamp(2.5rem,7vw,5rem);
+  font-weight:800;
+  letter-spacing:-.04em;
+  margin-bottom:1.5rem;
+  max-width:900px;
+  line-height:1.1;
+}
+
+.grad{
+  background:linear-gradient(90deg,var(--purple),var(--blue));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+  max-width:700px;
+  margin:0 auto 2rem;
+  font-size:1.1rem;
+  color:var(--mute);
+}
+
+/* button + price FIX */
+.btn.primary{
+  background:var(--purple);
+  color:#fff;
+  padding:.85rem 2rem;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.25s;
+  margin-bottom:.35rem; /* key fix */
+}
+
+.btn.primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(108,71,255,.35);
+}
+
+.btn.big{
+  font-size:1.1rem;
+}
+
+.price{
+  margin-top: .58rem; /* was 0 */
+  font-size: .9rem;
+  color: var(--mute);
+  display: block;
+}
+
+/* mockup */
+.mockup{
+  width:280px;
+  height:580px;
+  margin-top:2rem;
+  background:url('images/iphone-mock.png') center/contain no-repeat;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));
+}
+
+/* particles */
+#particles{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:-1;
+}
+
+/* sections */
+main{
+  padding:1.5rem 2rem 4rem; /* reduced top padding */
+  max-width:1000px;
+  margin:auto;
+}
+
+
+section{
+  margin-bottom:5rem;
+  text-align:center;
+}
+
+h2{
+  font-size:2rem;
+  margin-bottom:1rem;
+  position:relative;
+  display:inline-block;
+}
+
+h2::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  height:3px;
+  width:40%;
+  background:var(--purple);
+}
+
+/* reveal */
+.reveal{
+  transition:opacity .6s ease, transform .6s ease;
+}
+
+.reveal.hidden{
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:2rem;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--purple);
+}
+
+.icon{
+  width:60px;
+  height:60px;
+  margin:0 auto 1rem;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:1.8rem;
+  background:var(--purple);
+  color:#fff;
+}
+
+.icon.yellow{ background:var(--yellow); }
+.icon.blue{ background:var(--blue); }
+
+/* testimonials */
+.quotes blockquote{
+  background:var(--surface);
+  border-left:4px solid var(--purple);
+  padding:1.5rem;
+  margin:1.5rem auto;
+  max-width:700px;
+  border-radius:6px;
+  font-style:italic;
+}
+
+.quotes cite{
+  display:block;
+  margin-top:1rem;
+  font-size:.8rem;
+  color:var(--mute);
+}
+
+/* cta band */
+.cta-band{
+  padding:4rem 2rem;
+  border-radius:12px;
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.cta-band h2{
+  margin-bottom:2rem;
+}
+
+.cta-band .btn{
+  margin-bottom:.35rem;
+}
+
+.cta-band p{
+  font-size:.9rem;
+  color:var(--mute);
+}
+
+/* footer */
+footer{
+  text-align:center;
+  padding:2rem;
+  font-size:.8rem;
+  color:var(--mute);
+}
+#problem.reveal{ margin-top: -35rem; }   /* pull section upward */
