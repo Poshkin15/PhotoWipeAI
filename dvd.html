@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>DVD Loading – PhotoWipe.AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    :root{ --bg:#111113; --dvd:#ff0; }
+    html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;}
+    #dvd{
+      position:absolute;
+      width:200px;height:200px;
+      will-change:transform;
+     background:url('Screenshot_2026-01-28_150405-removebg-preview\ \(1\).png') center/cover no-repeat;
+      filter:drop-shadow(0 0 10px var(--dvd));
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dvd"></div>
+
+  <script>
+    const dvd = document.getElementById('dvd');
+    let x = 0, y = 0, vx = 3, vy = 3;
+    const w = window.innerWidth - 200;
+    const h = window.innerHeight - 200;
+
+    function move(){
+      x += vx;
+      y += vy;
+      if (x <= 0 || x >= w) vx *= -1;
+      if (y <= 0 || y >= h) vy *= -1;
+      dvd.style.transform = `translate(${x}px, ${y}px)`;
+      requestAnimationFrame(move);
+    }
+    move();
+  </script>
+</body>
+</html>
